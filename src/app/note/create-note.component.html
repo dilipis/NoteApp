@@ -1,0 +1,17 @@
+<div class="container">
+  <form (ngSubmit) = "addNote(f)" #f = "ngForm">
+    <div class="form-group">
+      <label>Enter note</label>
+      <textarea name="note" placeholder="Enter notes" id="note" rows="5" class="form-control" [ngModel] = "currentNote?.noteText"></textarea>
+      <hr>
+      <label>Link</label>
+      <input type="text" placeholder="Enter link" class="form-control" id="link" name="link" [ngModel] = "currentNote?.noteLink">
+      <hr>
+      <label>Tags</label>
+      <input type="text" placeholder="Enter tags" class="form-control" id="tags" name="tags" [ngModel] = "currentNote?.noteTags">
+      <hr>
+      <button class="btn btn-primary" type="submit">Save Note</button>
+      <button class="btn btn-danger" (click) = "onClear(f)">Clear</button>
+    </div>
+  </form>
+</div>

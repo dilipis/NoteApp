@@ -1,0 +1,16 @@
+<article class="panel panel-default">
+  <div class="panel-body">
+    {{note.noteText}}
+  </div>
+  <footer class="panel-footer">
+    <div class="author">
+      {{note.noteCreatorName}}
+      <a href="{{note.noteLink}}">Link</a>
+      {{note.noteTags}}
+    </div>
+    <div class="config" *ngIf = "belongsToUser()">
+      <a (click) = "onEdit()">Edit</a>
+      <a (click) = "onDelete()">Delete</a>
+    </div>
+  </footer>
+</article>
