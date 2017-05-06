@@ -12,7 +12,7 @@ var userRoutes = require('./routes/user');
 
 var app = express();
 
-mongoose.connect('localhost:27017/note-app');
+mongoose.connect(process.env.MONGODB_URI || 'localhost:27017/note-app');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
